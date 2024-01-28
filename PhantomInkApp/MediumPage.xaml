@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhantomInkApp.MediumPage"
+             Title="MediumPage"
+             BackgroundColor="White">
+    <VerticalStackLayout Margin="16">
+        <Label 
+            Text="Медиум"
+            FontSize="30"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontFamily="C_BOX_D"
+            Margin="0,0,0,16"/>
+
+        <VerticalStackLayout>
+            
+            <HorizontalStackLayout>
+                <Label Text="Код колоды:" Margin="0,0,0,4" VerticalOptions="Center"/>
+                <HorizontalStackLayout VerticalOptions="Center">
+                    <Entry 
+                        x:Name="Entry_Code" 
+                        Placeholder="Число от 0 до 999" 
+                        Keyboard="Numeric" 
+                        MaxLength="3"
+                        TextChanged="Entry_Code_TextChanged"
+                        VerticalOptions="Center"/>
+                    <Button 
+                        x:Name="Button_RandomCode" 
+                        Text="Случайно" 
+                        FontSize="Micro"
+                        Clicked="Button_RandomCode_Clicked"
+                        VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+            <Label Text="Код колоды должнен совпадать у обеих команд" FontSize="Micro" HorizontalTextAlignment="Center"/>
+
+            <HorizontalStackLayout Margin="0,8,0,0">
+                <Label 
+                    Text="Команда:" 
+                    Margin="0,0,0,4" 
+                    VerticalOptions="Center"/>
+                <Picker 
+                    x:Name="Picker_Command" 
+                    Title="Выберите команду" 
+                    VerticalOptions="Center" 
+                    SelectedIndexChanged="Picker_Command_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>Солнца</x:String>
+                        <x:String>Луны</x:String>
+                    </Picker.Items>
+                </Picker>
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+
+        <Button x:Name="Button_Start" Text="Начать" Clicked="Button_Start_Clicked" IsEnabled="False" VerticalOptions="End" Margin="0,16,0,0"/>
+    </VerticalStackLayout>
+</ContentPage>

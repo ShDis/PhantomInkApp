@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhantomInkApp.MainPage"
+             BackgroundColor="Black">
+             
+    <Grid>
+        <Label Text="Version: experimental-aplpha-1" TextColor="Gray" FontSize="Micro"></Label>
+        <Label Text="Coded by ShDis github.com/shdis" TextColor="Gray" FontSize="Micro" HorizontalTextAlignment="End"></Label>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <Image
+                Grid.Row="0"
+                Source="phantom_ink_icon_transparent.png"
+                Aspect="AspectFit"
+                Margin="16"/>
+
+            <Button VerticalOptions="End" HorizontalOptions="Center"
+                Grid.Row="1"
+                BackgroundColor="#d6c296"
+                TextColor="#070205"
+                x:Name="Button_PlayAsSpirit" 
+                Text="Играть за духа" FontFamily="C_BOX_D" FontSize="Large"
+                Clicked="Button_PlayAsSpirit_Clicked"/>
+
+            <Button VerticalOptions="Center" HorizontalOptions="Center"
+                Grid.Row="2"
+                BackgroundColor="#d6c296"
+                TextColor="#070205"
+                x:Name="Button_PlayAsMedium" 
+                Text="Играть за медиума" FontFamily="C_BOX_D" FontSize="Large"
+                Clicked="Button_PlayAsMedium_Clicked"/>
+
+        </Grid>
+    </Grid>
+
+</ContentPage>

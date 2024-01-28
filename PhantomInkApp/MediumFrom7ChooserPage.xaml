@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhantomInkApp.MediumFrom7ChooserPage"
+             Title="MediumFrom7ChooserPage"
+             BackgroundColor="#fff0ff">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" x:Name="Button_Continue" Clicked="Button_Continue_Clicked" Text="Выбрать 2 и продолжить" BackgroundColor="#d6c296" TextColor="#070205" IsEnabled="False"></Button>
+        <Image Grid.Row="1" Source="medium_questions.png" Aspect="AspectFill"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.0*"></RowDefinition>
+                <RowDefinition Height="0.2*"></RowDefinition>
+                <RowDefinition Height="1.9*"></RowDefinition>
+                <RowDefinition Height="0.2*"></RowDefinition>
+                <RowDefinition Height="2.0*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="Label_Title0" Text="Testtest" FontSize="36" TextColor="#d6c296" FontFamily="C_BOX_D"
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="2" x:Name="Label_Text" Text="Testtestetstet" FontSize="32" TextColor="#d6c296" FontFamily="C_BOX"
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="24,0,24,0"/>
+            <Label Grid.Row="4" x:Name="Label_Title1" Text="Testtestetstet" FontSize="36" TextColor="#d6c296" FontFamily="C_BOX_D"
+       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="Button_Prev" Clicked="Button_Prev_Clicked" Text="Пред." BackgroundColor="#d6c296" TextColor="#070205"></Button>
+            <VerticalStackLayout Grid.Column="1">
+                <HorizontalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label VerticalOptions="Center" Text="Выбрать для духа"></Label>
+                    <CheckBox x:Name="CheckBox_ForSpirit" CheckedChanged="CheckBox_ForSpirit_CheckedChanged" VerticalOptions="Center"></CheckBox>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label Text="Карта " HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Micro"></Label>
+                    <Label Text="1" x:Name="Label_CardNum" BindingContext="{Binding Path=Data.CurrentCardNum}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Micro"></Label>
+                    <Label Text=" из " HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Micro"></Label>
+                    <Label Text="7" x:Name="Label_CardCount" BindingContext="{Binding Path=Data.CardsInViewCount}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Micro"></Label>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <Button Grid.Column="2" x:Name="Button_Next" Clicked="Button_Next_Clicked"   Text="След." BackgroundColor="#d6c296" TextColor="#070205"></Button>
+        </Grid>
+    </Grid>
+</ContentPage>
